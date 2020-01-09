@@ -6,7 +6,7 @@
 
 ## Author
 
-Nicholas Davis (nbdavis.stl@monsanto.com)
+Nicholas Davis (nbdavis.stl@gmail.com)
 
 ## Description
 
