@@ -1,5 +1,4 @@
-
-
+import configparser
 import smtplib
 import time
 import imaplib
@@ -7,8 +6,10 @@ import email
 
 def read_email_from_gmail():
     try:
-        mail = imaplib.IMAP4_SSL(SMTP_SERVER)
-        mail.login(FROM_EMAIL,FROM_PWD)
+
+        config = configparser.ConfigParser()
+        mail = imaplib.IMAP4_SSL(config['DEFAULT']['SMTP_SERVER'])
+        mail.login(config['DEFAULT']['FROM_EMAIL'],config['DEFAULT']['FROM_PWD'])
         mail.select('inbox')
 
         type, data = mail.search(None, 'ALL')
